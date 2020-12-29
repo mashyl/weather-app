@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" rel="preload" href="media.css">
+
+    <link rel="preconnect" href="https://api.openweathermap.org">
+    <link rel="preconnect" href="https://maps.googleapis.com">
+
+    <script src="./dist/app.js" defer></script>
+
+    <!-- <script src="./scripts/app.js" defer type="module"></script>
+    <script src="./scripts/DOM-helper.js" defer type="module"></script>
+    <script src="./scripts/convertLocation.js" defer type="module"></script>
+    <script src="./scripts/helpers.js" defer type="module"></script> -->
+
+    <title>Weather App</title>
+</head>
+<body>
+
+    <div class="background filter-backgr"></div>
+    <main>
+        <div class="today">
+            <input class="city-input" type="search" list="city-list" placeholder="YOUR CITY" value="">
+                <datalist id="city-list"></datalist>
+            <div class="icon">
+                <img height="32" alt="icon" src="./icons/clear-day.png">
+            </div>
+            <h1 id="desc-html">DESCRIPTION</h1>
+            <div id="current-date">Date</div>
+            <h2 id="temperature">Temp℃</h2>
+        </div>
+    </main>
+    
+    <div class="week-area">
+        <button id="toggle-weekly-btn">
+            <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                viewBox="0 0 512.002 512.002" style="enable-background:new 0 0 512.002 512.002;" xml:space="preserve">
+                <g>
+                    <g>
+                        <path d="M388.425,241.951L151.609,5.79c-7.759-7.733-20.321-7.72-28.067,0.04c-7.74,7.759-7.72,20.328,0.04,28.067l222.72,222.105
+                            L123.574,478.106c-7.759,7.74-7.779,20.301-0.04,28.061c3.883,3.89,8.97,5.835,14.057,5.835c5.074,0,10.141-1.932,14.017-5.795
+                            l236.817-236.155c3.737-3.718,5.834-8.778,5.834-14.05S392.156,245.676,388.425,241.951z"/>
+                    </g>
+                </g>
+                <g>
+                </g>
+                <g>
+                </g>
+                <g>
+                </g>
+                <g>
+                </g>
+                <g>
+                </g>
+                <g>
+                </g>
+                <g>
+                </g>
+                <g>
+                </g>
+                <g>
+                </g>
+                <g>
+                </g>
+                <g>
+                </g>
+                <g>
+                </g>
+                <g>
+                </g>
+                <g>
+                </g>
+                <g>
+                </g>
+            </svg>
+        </button>
+    
+         <div class="weekly-box no-display">
+            <template class="weekly">
+                <div class="day-row">
+                    <h3 class="day">Week day</h3>
+                    <h3 class="dates">Date</h3>
+                    <div class="min-icon">
+                        <img height="16" alt="icon">
+                    </div>
+                    <h3 class="temp">16</h3>
+                </div>
+            </template>
+        </div>
+    </div>
+   
+</body>
+</html>

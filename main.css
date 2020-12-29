@@ -1,0 +1,190 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    height: 100vh;
+    width: 100vw;
+    font-family: 'Montserrat', sans-serif;
+    color: whitesmoke;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+}
+
+main {
+    max-height: 50%;
+    max-width: 100%;
+}
+
+.no-display {
+    display: none;
+}
+
+.background {
+    width: 100vw;
+    height: 100vh;
+    background-image: url('./background/group-day-mobile.svg');
+    background-size: cover;
+    position: fixed;
+    z-index: -1;
+}
+
+.filter-backgr {
+    filter: grayscale(100%);
+}
+
+.week-area {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    display: grid;
+    justify-items: center;
+    grid-template-rows: auto auto;
+}
+
+.night {
+    background-image: url('./background/group-night-mobile.svg');
+}
+
+.today {
+    align-self: center;
+    padding: 3rem;
+    width: 100%;
+    max-height: 100%;
+    display: grid;
+    align-items: center;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    column-gap: 1.5rem;
+    grid-template-areas: 'icon city'
+                        'icon day'
+                        'description temp'
+                        'description temp';
+}
+
+.city-input {
+    background: transparent;
+    color: whitesmoke;
+    border: none;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: 300;
+    font-size: 0.8rem;
+    min-width: fit-content;
+    min-height: max-content;
+    grid-area: city;
+}
+
+.city-input::placeholder {
+    color: whitesmoke;
+    font-weight: 300;
+    font-size: 0.8rem;
+}
+
+.city-input:focus {
+    border: none;
+    outline: none;
+}
+
+.icon {
+    text-align: center;
+    grid-area: icon;
+}
+
+.icon img {
+    aspect-ratio: attr(height) / attr(width);
+}
+
+#desc-html, #temperature {
+    font-weight: 200;
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+#desc-html {
+    grid-area: description;
+}
+
+#current-date {
+    text-align: center;
+}
+
+#temperature {
+    grid-area: temp;
+}
+
+#toggle-weekly-btn {
+    width: 3rem;
+    height: 3rem;
+    border: none;
+    background: transparent;
+    margin: 1rem;
+    justify-self: center;
+} 
+
+#toggle-weekly-btn:hover {
+    cursor: pointer;
+}
+
+#toggle-weekly-btn:focus,
+#toggle-weekly-btn:active {
+    outline: none;
+    border: none;
+}
+
+#toggle-weekly-btn svg {
+    fill: whitesmoke;
+    transform: rotateZ(-90deg);
+    transition: transform 0.3s ease;
+}
+
+#toggle-weekly-btn svg.rotated {
+    transform: rotateZ(90deg);
+}
+
+.weekly-box {
+    background-color: rgba(0, 0, 0, 0.342);
+    width: 100%;
+}
+
+.day-row {
+    padding: 0.5rem;
+    color: white;
+    max-height: min-content;
+    height: 3rem;
+    max-width: 100%;
+    display: grid;
+    grid-template-columns: 4fr 7fr 1fr 1fr;
+    grid-template-areas: 'day dates icon temp';
+    border-top: 1px solid whitesmoke;
+}
+
+.day-row .day {
+    grid-area: day;
+    font-weight: 200;
+}
+
+.day-row .dates {
+    grid-area: dates;
+    font-weight: 200;
+}
+
+.day-row .min-icon {
+    grid-area: icon;
+}
+
+.day-row .temp {
+    grid-area: temp;
+    font-weight: 200;
+}
+
+.min-icon img {
+    aspect-ratio: attr(height) / attr(width);
+}

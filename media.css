@@ -1,0 +1,46 @@
+@media (min-width: 450px) {
+    .background {
+        background-image: url('./background/group-day-desk.svg');
+    }
+
+    
+    .night {
+        background-image: url('./background/group-night-desk.svg');
+    }
+    
+    .today {
+        justify-self: flex-start;
+        max-width: 50%;
+    }
+
+    #desc-html, #temperature {
+        font-size: 2.3rem;
+    }
+
+}
+
+@media (min-width: 600px) {
+    .week-area {
+        right: 0;
+        height: 100%;
+        max-width: 30%;
+        grid-template-rows: 100%;
+        grid-template-columns: auto;
+        align-items: center;
+        background: rgba(0, 0, 0, 0.342);
+    }
+
+    #toggle-weekly-btn {
+        display: none;
+    }
+
+    .weekly-box {
+        height: fit-content;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .weekly-box:last-child {
+        border-bottom: 1px solid whitesmoke;
+    }
+}
