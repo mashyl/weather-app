@@ -5,7 +5,7 @@ import {timestampToDate, chooseIcon} from './helpers.js'
 const cityInput = document.querySelector('.city-input');
 let cityList = document.getElementById('city-list');
 
-const API_KEY = process.env.API_KEY;
+const API_KEY = '7899365eb731d9029680a0fb8a81586e';
 
 window.onload = () => {
     if(localStorage.getItem('cities')) {

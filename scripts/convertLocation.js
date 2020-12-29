@@ -1,9 +1,12 @@
-const API_GOOGLE = process.env.API_GOOGLE;
+const api1 = 'AIzaSyAm0nn';
+const api2 = 'DFbVwnhj65IOPq';
+const api3 = 'w2D__m70gcEP-g';
+const api = api1.concat(api2, api3);
 
 export async function cityToCoords(city) {
     const urlAddress = encodeURI(city);
 
-    const response = await fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${urlAddress}&key=${API_GOOGLE}`);
+    const response = await fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${urlAddress}&key=${api}`);
     if (!response.ok) {
         throw new Error('Request failed. Try again.')
     }
@@ -18,7 +21,7 @@ export async function cityToCoords(city) {
 }
 
 export async function coordsToCity(coords) {
-    const response = await fetch(`https://maps.googleapis.com/maps/api/geocode/json?latlng=${coords.lat},${coords.lng}&key=${API_GOOGLE}`)
+    const response = await fetch(`https://maps.googleapis.com/maps/api/geocode/json?latlng=${coords.lat},${coords.lng}&key=${api}`)
     if (!response.ok) {
         throw new Error('Request failed. Try again.')
     }
